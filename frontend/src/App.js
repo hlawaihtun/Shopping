@@ -31,11 +31,13 @@ import logo_wh_transparent from "./frontend/logo/logo_wh_transparent.png";
 
 import Home from "./components/Home.js";
 import Login from "./components/Login.js";
+import Promotions from "./components/Promotions.js";
+import Register from "./components/Register.js";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>
         <div>
           <link rel="icon" sizes="57x57" href={apple1} />
           <link rel="apple-touch-icon" sizes="60x60" href={apple1} />
@@ -123,7 +125,10 @@ function App() {
                         Login{" "}
                       </a>{" "}
                       |{" "}
-                      <a href="" className="text-decoration-none loginLink">
+                      <a
+                        href="Register"
+                        className="text-decoration-none loginLink"
+                      >
                         {" "}
                         Sign-up{" "}
                       </a>
@@ -168,7 +173,7 @@ function App() {
                         method="POST"
                         className="d-none"
                       >
-                        @csrf
+                        {/* @csrf */}
                       </form>
                     </div>
                     {/* @endguest */}
@@ -249,7 +254,7 @@ function App() {
 
             <div className="col-3">
               <a
-                href="{{route('promotionspage')}}"
+                href="Promotions"
                 className="text-decoration-none text-dark font-weight-bold"
               >
                 {" "}
@@ -347,7 +352,7 @@ function App() {
             </div>
             <div className="col-2">
               <a
-                href="javascript:void(0)"
+                // href="javascript:void(0)"
                 className="closebtn text-decoration-none"
               >
                 <i className="icofont-close-line"></i>
@@ -494,143 +499,143 @@ function App() {
             </p>
           </div>
         </div>
-        {/* <Routes>
+        <Routes>
+          <Route exact path="/" element={<Home />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
-        </Routes> */}
-        <Home></Home>
-        <div className="container-fluid bg-light p-5 align-content-center align-items-center mt-5">
-          <div className="row">
-            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-              <div className="row">
-                <div className="col-md-4">
-                  <i className="icofont-fast-delivery serviceIcon maincolor"></i>
-                </div>
+          <Route exact path="/register" element={<Register />}></Route>
+          <Route exact path="/promotions" element={<Promotions />}></Route>
+        </Routes>
+      </Router>
 
-                <div className="col-md-8">
-                  <h6>Door to Door Delivery</h6>
-                  <p className="text-muted" style={{ fontSize: 12 }}>
-                    On-time Delivery
-                  </p>
-                </div>
+      <div className="container-fluid bg-light p-5 align-content-center align-items-center mt-5">
+        <div className="row">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+            <div className="row">
+              <div className="col-md-4">
+                <i className="icofont-fast-delivery serviceIcon maincolor"></i>
+              </div>
+
+              <div className="col-md-8">
+                <h6>Door to Door Delivery</h6>
+                <p className="text-muted" style={{ fontSize: 12 }}>
+                  On-time Delivery
+                </p>
               </div>
             </div>
+          </div>
 
-            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-              <div className="row">
-                <div className="col-md-4">
-                  <i className="icofont-headphone-alt-2 serviceIcon maincolor"></i>
-                </div>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+            <div className="row">
+              <div className="col-md-4">
+                <i className="icofont-headphone-alt-2 serviceIcon maincolor"></i>
+              </div>
 
-                <div className="col-md-8">
-                  <h6> Customer Service </h6>
-                  <p className="text-muted" style={{ fontSize: 12 }}>
-                    {" "}
-                    09-779-999-915 ၊ <br /> 09-779-999-913{" "}
-                  </p>
-                </div>
+              <div className="col-md-8">
+                <h6> Customer Service </h6>
+                <p className="text-muted" style={{ fontSize: 12 }}>
+                  {" "}
+                  09-779-999-915 ၊ <br /> 09-779-999-913{" "}
+                </p>
               </div>
             </div>
+          </div>
 
-            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-              <div className="row">
-                <div className="col-md-4">
-                  <i className="bx bx-undo serviceIcon maincolor"></i>
-                </div>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+            <div className="row">
+              <div className="col-md-4">
+                <i className="bx bx-undo serviceIcon maincolor"></i>
+              </div>
 
-                <div className="col-md-8">
-                  <h6> 100% satisfaction </h6>
-                  <p className="text-muted" style={{ fontSize: 12 }}>
-                    {" "}
-                    3 days return{" "}
-                  </p>
-                </div>
+              <div className="col-md-8">
+                <h6> 100% satisfaction </h6>
+                <p className="text-muted" style={{ fontSize: 12 }}>
+                  {" "}
+                  3 days return{" "}
+                </p>
               </div>
             </div>
+          </div>
 
-            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
-              <div className="row">
-                <div className="col-md-4">
-                  <i className="icofont-credit-card serviceIcon maincolor"></i>
-                </div>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+            <div className="row">
+              <div className="col-md-4">
+                <i className="icofont-credit-card serviceIcon maincolor"></i>
+              </div>
 
-                <div className="col-md-8">
-                  <h6> Cash on Delivery </h6>
-                  <p className="text-muted" style={{ fontSize: 12 }}>
-                    {" "}
-                    Door to Door Service{" "}
-                  </p>
-                </div>
+              <div className="col-md-8">
+                <h6> Cash on Delivery </h6>
+                <p className="text-muted" style={{ fontSize: 12 }}>
+                  {" "}
+                  Door to Door Service{" "}
+                </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+      <div className="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
 
-        <div className="container">
-          <div className="row text-center">
-            <div className="col-12">
-              <h1> News Letter </h1>
-              <p>
-                Subscribe to our newsletter and get 10% off your first purchase
-              </p>
-            </div>
-
-            <div className="offset-2 col-8 offset-2 mt-5">
-              <form>
-                <div className="input-group mb-3">
-                  <input
-                    type="text"
-                    className="form-control form-control-lg px-5 py-3"
-                    placeholder="Recipient's username"
-                    aria-label="Recipient's username"
-                    aria-describedby="button-addon2"
-                    style={{
-                      borderTopLeftRadius: "15rem",
-                      borderBottomLeftRadius: "15rem",
-                    }}
-                  />
-
-                  <div className="input-group-append">
-                    <button
-                      className="btn btn-secondary subscribeBtn"
-                      type="button"
-                      id="button-addon2"
-                    >
-                      {" "}
-                      Subscribe{" "}
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div className="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
-
-        <footer className="py-3 mt-5">
-          <div className="container">
-            <div className="text-center pb-3">
-              <a
-                href="#myPage"
-                title="To Top"
-                className="text-white to_top text-decoration-none"
-              >
-                <i className="icofont-rounded-up" style={{ fontSize: 20 }}></i>
-              </a>
-            </div>
-            <p className="m-0 text-center text-white">
-              Copyright &copy;{" "}
-              <img
-                src={logo_wh_transparent}
-                style={{ width: 30, height: 30 }}
-              />{" "}
-              2019
+      <div className="container">
+        <div className="row text-center">
+          <div className="col-12">
+            <h1> News Letter </h1>
+            <p>
+              Subscribe to our newsletter and get 10% off your first purchase
             </p>
           </div>
-        </footer>
+
+          <div className="offset-2 col-8 offset-2 mt-5">
+            <form>
+              <div className="input-group mb-3">
+                <input
+                  type="text"
+                  className="form-control form-control-lg px-5 py-3"
+                  placeholder="Recipient's username"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                  style={{
+                    borderTopLeftRadius: "15rem",
+                    borderBottomLeftRadius: "15rem",
+                  }}
+                />
+
+                <div className="input-group-append">
+                  <button
+                    className="btn btn-secondary subscribeBtn"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    {" "}
+                    Subscribe{" "}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </Router>
+      <div className="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
+
+      <footer className="py-3 mt-5">
+        <div className="container">
+          <div className="text-center pb-3">
+            <a
+              href="#myPage"
+              title="To Top"
+              className="text-white to_top text-decoration-none"
+            >
+              <i className="icofont-rounded-up" style={{ fontSize: 20 }}></i>
+            </a>
+          </div>
+          <p className="m-0 text-center text-white">
+            Copyright &copy;{" "}
+            <img src={logo_wh_transparent} style={{ width: 30, height: 30 }} />{" "}
+            2019
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }
 

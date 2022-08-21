@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   render() {
@@ -14,7 +15,7 @@ class Login extends Component {
           <div className="row justify-content-center">
             <div className="col-5">
               <form action="{{ route('login') }}" method="POST">
-                @csrf
+                {/* @csrf */}
                 <div className="form-group">
                   <label className="small mb-1" for="inputEmailAddress">
                     Email
@@ -22,16 +23,16 @@ class Login extends Component {
                   <input
                     className="form-control py-4 @error('email') is-invalid @enderror"
                     name="email"
-                    value="{{ old('email') }}"
+                    // value="{{ old('email') }}"
                     id="inputEmailAddress"
                     type="email"
                     placeholder="Enter email address"
                   />
-                  @error('email')
+                  {/* @error('email') */}
                   <span className="invalid-feedback" role="alert">
                     {/* <strong>{{ $message }}</strong> */}
                   </span>
-                  @enderror
+                  {/* @enderror */}
                 </div>
                 <div className="form-group">
                   <label className="small mb-1" for="inputPassword">
@@ -39,17 +40,17 @@ class Login extends Component {
                   </label>
                   <input
                     className="form-control py-4 @error('password') is-invalid @enderror"
-                    value="{{ old('password') }}"
+                    // value="{{ old('password') }}"
                     id="inputPassword"
                     type="password"
                     placeholder="Enter password"
                     name="password"
                   />
-                  @error('password')
+                  {/* @error('password') */}
                   <span className="invalid-feedback" role="alert">
                     {/* <strong>{{ $message }}</strong> */}
                   </span>
-                  @enderror
+                  {/* @enderror */}
                 </div>
                 <div className="form-group">
                   <div className="custom-control custom-checkbox">
@@ -60,7 +61,7 @@ class Login extends Component {
                     />
                     <label
                       className="custom-control-label"
-                      for="rememberPasswordCheck"
+                      // for="rememberPasswordCheck"
                     >
                       Remember password
                     </label>
@@ -81,12 +82,7 @@ class Login extends Component {
               </form>
 
               <div className=" mt-3 text-center ">
-                <a
-                  href="{{route('registerpage')}}"
-                  className="loginLink text-decoration-none"
-                >
-                  Need an account? Sign Up!
-                </a>
+                <Link to={"../Register"}>Need an account? Sign Up!</Link>
               </div>
             </div>
           </div>
